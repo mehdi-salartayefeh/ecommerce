@@ -9,6 +9,7 @@ a sample ecommerce site that I made using Nodejs, React, and Nestjs
     - HTML5
     - CSS3 
     - SCSS & LESS
+    - State management in MyState.js
 - Back-end    
     - RESTFUL (Connectivity)
     - NodeJs (Language)
