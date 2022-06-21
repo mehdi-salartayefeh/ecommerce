@@ -3,6 +3,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 .App {
   padding-top: 4pc;
   padding-bottom: 3pc;
@@ -27,11 +28,10 @@
     transform: rotate(360deg);
   }
 }
+
 .CartCount {
   color: white !important;
   position: fixed;
   right: 0;
   height: 56px;
 }
-
-/*# sourceMappingURL=App.css.map */

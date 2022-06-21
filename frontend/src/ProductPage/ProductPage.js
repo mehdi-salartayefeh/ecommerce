@@ -5,7 +5,7 @@ import {MyState} from "../MyState";
 
 function ProductPage() {
     const location = useLocation()
-    const { Id, Label, Desc, Price, Image } = location.state
+    const { Id, Label, Desc, Price, Image } = location.state;
     return (
         <div className={'row mt-5 border p-5'}>
             <div className={'col-6'}>
@@ -17,7 +17,7 @@ function ProductPage() {
                 <div>Price: {Price}</div>
 
                 <br/>
-                <button onClick={()=>MyState.Cart.Orders.push(location.state)} className={'btn btn-primary btn-block fs-6'}>
+                <button onClick={()=>{MyState.Cart.addOrder(location.state);}} className={'btn btn-primary btn-block fs-6'}>
                     <span className={'bi bi-cart-plus fs-2'}/> Add To Card
                 </button>
 
