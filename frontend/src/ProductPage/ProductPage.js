@@ -21,8 +21,8 @@ function ProductPage() {
                     <span className={'bi bi-cart-plus fs-2'}/> Add To Card
                 </button>
 
-                <Link className={'btn text-secondary float-end fs-6'} to={'/'}>
-                    <span className={'bi bi-return fs-2'}/>Return</Link>
+                <Link className={'btn text-secondary float-end'} to={'/'}>
+                    <span className={'bi bi-none fs-2'}/>Return</Link>
             </div>
         </div>
     );

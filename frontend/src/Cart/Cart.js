@@ -21,12 +21,12 @@ class Cart extends React.Component {
                     {
                         MyState.Cart.Orders.map(orderItem=>{
                             return (
-                                <li key={orderItem.Id} className={'row my-2 p-0 border'}>
+                                <li key={orderItem.Id} className={'row my-2 p-2 border bg-light'}>
                                     <img className={'img-fluid col-3'} src={orderItem.Image}/>
                                     <div className={'col-9'}>
                                         {orderItem.Label}
                                         <br/>
-                                        {orderItem.Price}
+                                        <b className={'float-end'}>{orderItem.Price} $</b>
                                         <br/>
                                         <button className={'btn btn-sm btn-outline-danger float-end'} onClick={()=>{this.handleDelete(orderItem)}}>
                                             <span className={'bi bi-cart-dash fs-6'}/>
@@ -39,8 +39,9 @@ class Cart extends React.Component {
                         })
                     }
                 </ol>
-                <Link className={'btn text-secondary float-end fs-6'} to={'/'}>
-                <span className={'bi bi-return fs-2'}/>Choose More</Link>
+                <Link className={'btn btn-secondary float-end fs-6'} to={'/'}>
+                    <span className={'bi bi-arrow-up-left'}/>Choose {MyState.Cart.Orders.length>0 ? 'More':'Products'}
+                </Link>
             </>
         )
     }

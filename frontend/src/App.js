@@ -13,22 +13,18 @@ import Cart from "./Cart/Cart";
 function App() {
   const [appState, setAppState] = useState({
     loading: false,
-    productsLoaded: false,
+    // productsLoaded: false,
     // repos: null,
   });
   useEffect(() => {
     setAppState(preAppState=>({...preAppState, loading:true}))
-    /*const apiUrl = `https://api.github.com/users/hacktivist123/repos`;
-    fetch(apiUrl)
-        .then((res) => res.json())
-        .then((repos) => {
-            setAppState({ loading: false, repos: repos });
-        });*/
-    if(!appState.productsLoaded) {
+    /*if(!appState.productsLoaded) {
       MyState.Product.loadProducts();
       setAppState(preAppState=>({...preAppState,productsLoaded:true}))
-    }
-    setAppState(preAppState=>({...preAppState, loading:false}))
+    }*/
+    MyState.Product.loadProductsOnce().then(()=>{
+      setAppState(preAppState=>({...preAppState, loading:false}));
+    });
   }, [setAppState]);
   return (
     <div className="container-md App">
