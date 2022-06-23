@@ -18,7 +18,7 @@ export const MyState = {
         productsLoaded : false,
         Products: [],
         loadProducts(){
-            const baseUrl = (process.env.NODE_ENV === 'development')?'http://localhost:3001':'https://noora.salartayefeh.ir/api';
+            const baseUrl = (process.env.NODE_ENV === 'development')?'http://localhost:3001':'https://noora.salartayefeh.ir';
             const apiUrl = baseUrl+`/product`;
             return fetch(apiUrl, {
                 method: "GET",
