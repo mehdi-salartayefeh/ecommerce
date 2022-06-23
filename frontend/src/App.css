@@ -3,6 +3,23 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+a {
+  text-decoration: none !important;
+}
+
+.carousel-item {
+  height: 400px;
+}
+.carousel-item img {
+  margin-top: -50px;
+}
+
+.logo {
+  width: 1.5pc;
+  margin: 0 0.5pc;
+  animation: App-logo-spin 10s infinite;
+}
+
 .App {
   padding-top: 4pc;
   padding-bottom: 3pc;
@@ -32,6 +49,10 @@
   position: fixed;
   right: 0;
   height: 56px;
+}
+
+.text-blue {
+  color: dodgerblue;
 }
 
 /*# sourceMappingURL=App.css.map */

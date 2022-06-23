@@ -14,10 +14,11 @@ class Cart extends React.Component {
     }
 
     render() {
+        let sum = MyState.Cart.Orders.reduce((previousValue, currentValue) => previousValue+ +currentValue.Price , 0)
         return (
             <>
                 <ol>
-                    <h2 className={'text-secondary'}>{MyState.Cart.Orders.length} items selected</h2>
+                    <header className={'text-blue fs-3'}>{MyState.Cart.Orders.length} item{MyState.Cart.Orders.length>1?'s':''} selected</header>
                     {
                         MyState.Cart.Orders.map(orderItem=>{
                             return (
@@ -26,7 +27,9 @@ class Cart extends React.Component {
                                     <div className={'col-9'}>
                                         {orderItem.Label}
                                         <br/>
-                                        <b className={'float-end'}>{orderItem.Price} $</b>
+                                        <small className={'text-secondary'}>{orderItem.Desc}</small>
+                                        <br/>
+                                        <b className={'float-end'}>${orderItem.Price}</b>
                                         <br/>
                                         <button className={'btn btn-sm btn-outline-danger float-end'} onClick={()=>{this.handleDelete(orderItem)}}>
                                             <span className={'bi bi-cart-dash fs-6'}/>
@@ -38,10 +41,18 @@ class Cart extends React.Component {
                             )
                         })
                     }
+
+                    <div className={'py-4'}>
+                        <Link className={'btn btn-primary btn-lg float-end '+(MyState.Cart.Orders.length===0?'disabled':'')} to={'#'}>
+                            Checkout <b>${sum}</b>
+                        </Link>
+                        <Link className={'btn btn-secondary float-start btn-lg'} to={'/'}>
+                            <span className={'bi bi-arrow-up-left'}/>Choose {MyState.Cart.Orders.length>0 ? 'More':'Products'}
+                        </Link>
+                    </div>
                 </ol>
-                <Link className={'btn btn-secondary float-end fs-6'} to={'/'}>
-                    <span className={'bi bi-arrow-up-left'}/>Choose {MyState.Cart.Orders.length>0 ? 'More':'Products'}
-                </Link>
+
+
             </>
         )
     }

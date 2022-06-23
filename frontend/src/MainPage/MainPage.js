@@ -3,15 +3,13 @@ import {
     MDBCard,
     MDBCardBody,
     MDBCardFooter,
-    MDBCardGroup,
     MDBCardImage,
-    MDBCardText,
     MDBCardTitle,
     MDBCarousel,
     MDBCarouselCaption,
     MDBCarouselElement,
     MDBCarouselInner,
-    MDBCarouselItem,
+    MDBCarouselItem, MDBCol, MDBRow,
 } from 'mdb-react-ui-kit';
 import {Link} from "react-router-dom";
 import {MyState} from "../MyState";
@@ -29,24 +27,27 @@ function getMdbCarouselItem(Id, Label, Desc, Price, Image, Active) {
 }
 
 function GetOneProductCard(Id, Label, Desc, Price, Image) {
-    return <MDBCard key={Id}>
+    return <MDBCol>
+        <MDBCard key={Id} className={'h-100'}>
         <Link to={'/product'} state={{ Id, Label, Desc, Price, Image }} className={'text-decoration-none'}>
         <MDBCardImage src={Image} alt='...' position='top'/>
         <MDBCardBody>
             <MDBCardTitle>
-                <span state={{ Id, Label, Desc, Price, Image }} className={'link-danger text-decoration-none fs-6'} >
+                <div state={{ Id, Label, Desc, Price, Image }} className={'link-danger text-decoration-none fs-6'} >
                     {Label}
-                </span>
+                </div>
+                <small className='text-muted float-end'>Price {Price}</small>
             </MDBCardTitle>
             {/*<MDBCardText className={'small text-secondary'}>
                 {Desc}
             </MDBCardText>*/}
         </MDBCardBody>
-        <MDBCardFooter>
+        {/*<MDBCardFooter>
             <small className='text-muted'>Price {Price}</small>
-        </MDBCardFooter>
+        </MDBCardFooter>*/}
         </Link>
-    </MDBCard>;
+    </MDBCard>
+    </MDBCol>;
 }
 
 MainPage.propTypes = {};
@@ -78,7 +79,9 @@ function MainPage(props) {
                 }
             </MDBCarouselInner>
         </MDBCarousel>
-        <MDBCardGroup className={'my-2'}>
+        <br/>
+        <h3 className={'text-center'}>Products</h3>
+        <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
             {products.map((product) => {
                 return GetOneProductCard(
                     product.Id,
@@ -88,7 +91,7 @@ function MainPage(props) {
                     product.Image,
                 )
             })}
-        </MDBCardGroup>
+        </MDBRow>
     </>;
 }
 
