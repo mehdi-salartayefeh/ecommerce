@@ -17,3 +17,6 @@ a sample ecommerce site that I made using Nodejs, React, and Nestjs
     - Mongoose (ODM)
     - Mongodb (Database)
     - PM2
+- Server
+  - Linux CentOS
+  - Caddy
