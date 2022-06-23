@@ -2,7 +2,7 @@
 a sample ecommerce website I made using Nodejs, React, and Nestjs
 
 ## Demo
-<a href="https://noora.salartayefeh.ir/">See Demo</a>
+<a href="https://noora.salartayefeh.ir/" target="_blank">See Demo</a>
 
 
 ### Technology Stack: 
