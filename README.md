@@ -16,3 +16,4 @@ a sample ecommerce site that I made using Nodejs, React, and Nestjs
     - NestJs (Framework)
     - Mongoose (ODM)
     - Mongodb (Database)
+    - PM2
